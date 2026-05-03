@@ -1,22 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My App</title>
+    <meta charset="UTF-8">
+    <title>3 Tier App</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 100px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello Frontend 🎉</h1>
-    <p>Backend says:</p>
-    <button onclick="loadData()">Call Backend</button>
+
+    <h1>🚀 3-Tier Docker Application</h1>
+
+    <p>Click below to call backend:</p>
+
+    <button onclick="callBackend()">Call Backend</button>
+
     <p id="result"></p>
 
     <script>
-        function loadData() {
+        function callBackend() {
             fetch('http://localhost:5000/')
-                .then(res => res.text())
-                .then(data => {
-                    document.getElementById("result").innerText = data;
-                });
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("result").innerText = data;
+            });
         }
     </script>
+
 </body>
 </html>
